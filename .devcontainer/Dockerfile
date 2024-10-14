@@ -13,7 +13,7 @@ RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86
 
 ENV PIP_BREAK_SYSTEM_PACKAGES=1
 
-RUN python -m pip install --upgrade pip --break-system-packages
+RUN python -m pip install --upgrade pip
 RUN pip3 install --break-system-packages --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124 
 RUN pip3 install --break-system-packages --no-cache-dir transformers evaluate datasets gradio accelerate bitsandbytes huggingface_hub
 RUN pip3 install --break-system-packages --no-cache-dir jupyterlab ipykernel
