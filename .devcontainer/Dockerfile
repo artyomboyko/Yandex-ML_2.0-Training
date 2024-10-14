@@ -1,11 +1,21 @@
 FROM ubuntu:24.04
+
 WORKDIR /tmp/
-RUN wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-keyring_1.1-1_all.deb \
-    dpkg -i cuda-keyring_1.1-1_all.deb \
-    apt-get update -y && apt-get upgrade -y && apt-get -y install cuda-toolkit-12-6
+
+RUN apt-get -y update && apt-get -y upgrade
+
+RUN apt-get -y install wget zlib1g htop iotop python3-pip python3-wheel python3-setuptools python-is-python3 \
+    jupyterlab
+
+RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb \
+    && dpkg -i cuda-keyring_1.1-1_all.deb \
+    && apt-get -y update \
+    && apt-get -y install cuda-toolkit-12-6 cudnn9-cuda-12 \
 
 RUN python -m pip install --upgrade pip
-COPY requirements.txt /tmp
-RUN pip install --no-cache-dir -r /tmp/requirements.txt
+RUN pip3 install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+RUN pip3 install --no-cache-dir transformers evaluate datasets gradio accelerate bitsandbytes huggingface_hub
 
-RUN pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+RUN RUN apt-get clean && rm -rf /tmp/*
+
+CMD bash
