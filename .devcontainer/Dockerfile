@@ -11,12 +11,9 @@ RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86
     && apt-get -y update \
     && apt-get -y install cuda-toolkit-12-6 cudnn9-cuda-12 
 
-ENV PIP_BREAK_SYSTEM_PACKAGES=1
-
-RUN python -m pip install --upgrade pip
 RUN pip3 install --break-system-packages --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124 
-RUN pip3 install --break-system-packages --no-cache-dir transformers evaluate datasets gradio accelerate bitsandbytes huggingface_hub
+RUN pip3 install --break-system-packages --no-cache-dir transformers evaluate datasets gradio accelerate bitsandbytes huggingface_hub librosa git-lfs ffmpeg jiwer pillow
 RUN pip3 install --break-system-packages --no-cache-dir jupyterlab ipykernel
-RUN RUN apt-get clean && rm -rf /tmp/*
+RUN apt-get clean && rm -rf /tmp/*
 
 CMD bash
