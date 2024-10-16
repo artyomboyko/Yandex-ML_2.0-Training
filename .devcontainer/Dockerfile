@@ -15,5 +15,5 @@ RUN pip3 install --break-system-packages --no-cache-dir torch torchvision torcha
 RUN pip3 install --break-system-packages --no-cache-dir transformers evaluate datasets gradio accelerate bitsandbytes huggingface_hub librosa git-lfs ffmpeg jiwer pillow
 RUN pip3 install --break-system-packages --no-cache-dir jupyterlab ipykernel
 RUN apt-get clean && rm -rf /tmp/*
-
-CMD bash
+	
+CMD ["bash"]
