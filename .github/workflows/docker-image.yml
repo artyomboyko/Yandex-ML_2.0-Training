@@ -8,7 +8,7 @@ on:
 
 jobs:
   push_to_registry:
-    name: Push devcontainer Docker image to Docker registry
+    name: Build and Push Docker image to registry
     runs-on: ubuntu-latest
     permissions:
       packages: write
@@ -35,7 +35,8 @@ jobs:
         id: push
         uses: docker/build-push-action@v6
         with:
-          context: ./.devcontainer
+          context: .
           file: ./.devcontainer/Dockerfile
           push: true
           tags: latest
+          
