@@ -26,7 +26,7 @@ RUN pip3 install --no-cache-dir torch torchvision torchaudio --index-url https:/
 RUN pip3 install --no-cache-dir transformers evaluate datasets gradio accelerate bitsandbytes huggingface_hub librosa git-lfs ffmpeg jiwer pillow tensorboard
 RUN pip3 install --no-cache-dir jupyterlab ipykernel
 
-# Очистка образа
+# Очистка образа от мусора
 RUN rm -rf /tmp/*
 
 CMD ["bash"]
