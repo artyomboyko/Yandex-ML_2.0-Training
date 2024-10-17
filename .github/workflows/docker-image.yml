@@ -39,5 +39,4 @@ jobs:
           context: .
           file: ./.devcontainer/Dockerfile
           push: true
-          tags: latest
-          
+          tags: artyomboyko/yandex-ml_2.0-training:latest
