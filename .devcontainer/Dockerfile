@@ -18,14 +18,14 @@ RUN apt-get clean
 # Позволяет устанавливать пакеты в системный Python.
 RUN rm -f /usr/lib/python3.12/EXTERNALLY-MANAGED
 
+# Установка ML пакетов и других вспомогательных пакетов  
+RUN pip3 install --no-cache-dir matplotlib nltk bokeh umap-learn tqdm
+
 # Установка Pytorch
 RUN pip3 install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124 
 
 # Установка Transformers
-RUN pip3 install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124 
 RUN pip3 install --no-cache-dir transformers evaluate datasets gradio accelerate bitsandbytes huggingface_hub librosa git-lfs ffmpeg jiwer pillow tensorboard transformers[agents]
-RUN pip3 install --no-cache-dir jupyterlab ipykernel IProgress ipywidgets
-RUN pip3 install --no-cache-dir nltk bokeh umap-learn 
 
 # Очистка образа от мусора
 RUN rm -rf /tmp/*
