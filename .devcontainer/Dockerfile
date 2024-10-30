@@ -19,7 +19,7 @@ RUN apt-get clean
 RUN rm -f /usr/lib/python3.12/EXTERNALLY-MANAGED
 
 # Пакеты необходимые для нормальной работы Jupyter Notebooks в VS Code
-RUN pip3 install --no-cache-dir ipykernel ipython ipywidgets 
+RUN pip3 install --no-cache-dir ipykernel ipython ipywidgets
 
 # Установка ML пакетов и других вспомогательных пакетов  
 RUN pip3 install --no-cache-dir matplotlib nltk bokeh umap-learn tqdm 
