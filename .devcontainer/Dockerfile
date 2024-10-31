@@ -25,7 +25,7 @@ RUN pip3 install --no-cache-dir ipykernel ipython ipywidgets
 RUN pip3 install --no-cache-dir matplotlib nltk bokeh umap-learn tqdm 
 
 # Установка Pytorch
-RUN pip3 install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124 
+RUN pip3 install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124 torch_tb_profiler
 
 # Установка Transformers
 RUN pip3 install --no-cache-dir transformers evaluate datasets gradio accelerate bitsandbytes huggingface_hub librosa git-lfs ffmpeg jiwer pillow tensorboard transformers[agents]
