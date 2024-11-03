@@ -26,7 +26,9 @@
 				"ms-toolsai.jupyter-renderers",
 				"ms-toolsai.vscode-jupyter-slideshow",
 				"ms-azuretools.vscode-docker",
-				"github.vscode-github-actions"
+				"github.vscode-github-actions",
+				"github.copilot",
+				"github.copilot-chat"
 			]
 		}
 	},
