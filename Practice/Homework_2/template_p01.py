@@ -34,25 +34,23 @@ def multiplicative_attention(decoder_hidden_state, encoder_hidden_states, W_mult
     return attention_vector
 
 
-
-
 def additive_attention(decoder_hidden_state, encoder_hidden_states, v_add, W_add_enc, W_add_dec):
-    '''
+    """
     decoder_hidden_state: np.array of shape (n_features_dec, 1)
     encoder_hidden_states: np.array of shape (n_features_enc, n_states)
     v_add: np.array of shape (n_features_int, 1)
     W_add_enc: np.array of shape (n_features_int, n_features_enc)
     W_add_dec: np.array of shape (n_features_int, n_features_dec)
-    
+
     return: np.array of shape (n_features_enc, 1)
         Final attention vector
-    '''
+    """
     # your code here
-    encoded_query = np.dot(W_add_enc, encoder_hidden_states)
-    encoded_key = np.dot(W_add_dec, decoder_hidden_state)
-    additive_term = np.tanh(encoded_query + encoded_key)
-
-
-    attention_vector = v_add.T.dot(additive_term)
+    wh = np.dot(W_add_enc, encoder_hidden_states)
+    ws = np.dot(W_add_dec, decoder_hidden_state)
+    scores = np.dot(v_add.T, np.tanh(wh + ws))
     
+    attention_weights = softmax(scores)
+    attention_vector = np.dot(encoder_hidden_states, attention_weights.T)
+
     return attention_vector
