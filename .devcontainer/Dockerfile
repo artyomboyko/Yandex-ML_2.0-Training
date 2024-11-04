@@ -22,7 +22,7 @@ RUN rm -f /usr/lib/python3.12/EXTERNALLY-MANAGED
 RUN pip3 install --no-cache-dir ipykernel ipython ipywidgets
 
 # Установка ML пакетов и других вспомогательных пакетов  
-RUN pip3 install --no-cache-dir matplotlib nltk bokeh umap-learn tqdm 
+RUN pip3 install --no-cache-dir matplotlib nltk bokeh umap-learn tqdm Unidecode
 
 # Установка Pytorch
 RUN pip3 install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124 
