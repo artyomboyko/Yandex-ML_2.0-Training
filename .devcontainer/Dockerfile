@@ -18,11 +18,11 @@ RUN apt-get clean
 # Отключаем внешнее урпавление системными пакетами Python.
 RUN rm -f /usr/lib/python3.12/EXTERNALLY-MANAGED
 
-COPY python_requirements.txt /tmp/python_requirements.txt
+COPY ipy_requirements.txt /tmp/ipy_requirements.txt
 WORKDIR /tmp/
 
 # Пакеты необходимые для нормальной работы Jupyter Notebooks в VS Code
-RUN pip3 install --no-cache-dir python_requirements.txt
+RUN pip3 install --no-cache-dir -r ipy_requirements.txt
 
 # Установка ML пакетов и других вспомогательных пакетов  
 RUN pip3 install --no-cache-dir matplotlib==3.9.2 nltk==3.9.1 bokeh==3.6.0 umap-learn==0.5.7 tqdm==4.66.6 Unidecode==1.3.8
