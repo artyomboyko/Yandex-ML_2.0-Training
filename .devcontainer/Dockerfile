@@ -18,18 +18,17 @@ RUN apt-get clean
 # Отключаем внешнее урпавление системными пакетами Python.
 RUN rm -f /usr/lib/python3.12/EXTERNALLY-MANAGED
 
-COPY ipy_requirements.txt /tmp/ipy_requirements.txt
 WORKDIR /tmp/
+COPY ipy_requirements.txt ml_requirements.txt pytorch_requirements.txt ./
 
-# Пакеты необходимые для нормальной работы Jupyter Notebooks в VS Code
+# Установка пакетов необходимых для Jupyter Notebooks и других вспомогательный пакетов 
 RUN pip3 install --no-cache-dir -r ipy_requirements.txt
 
-# Установка ML пакетов и других вспомогательных пакетов  
-RUN pip3 install --no-cache-dir matplotlib==3.9.2 nltk==3.9.1 bokeh==3.6.0 umap-learn==0.5.7 tqdm==4.66.6 Unidecode==1.3.8
+# Установка ML пакетов  
+RUN pip3 install --no-cache-dir -r ml_requirements.txt
 
 # Установка Pytorch
-RUN pip3 install --no-cache-dir torch torchvision==0.20.1+cu124 torchaudio==2.5.1+cu124 --index-url https://download.pytorch.org/whl/cu124 
-RUN pip3 install --no-cache-dir torch_tb_profiler
+RUN pip3 install --no-cache-dir --index-url https://download.pytorch.org/whl/cu124 -r pytorch_requirements.txt
 
 # Установка Transformers
 RUN pip3 install --no-cache-dir transformers==4.46.1 evaluate==0.4.3 datasets==3.1.0 gradio==5.4.0 gradio_client==1.4.2 accelerate==1.1.0 bitsandbytes==0.44.1 huggingface_hub==0.26.2 librosa==0.10.2.post1 git-lfs==1.6 ffmpeg==1.4 jiwer pillow tensorboard transformers[agents]
