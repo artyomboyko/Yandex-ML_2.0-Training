@@ -4,8 +4,7 @@ WORKDIR /tmp/
 
 # Обновление системы, установка Python и полезных утилит
 RUN apt-get -y update && apt-get -y upgrade
-RUN apt-get -y --no-cache-dir install \
-    wget==1.21.4-1ubuntu4.1 zlib1g htop iotop python3-pip python3-wheel python3-setuptools python-is-python3 git
+RUN apt-get -y --no-cache-dir install wget zlib1g htop iotop python3-pip python3-wheel python3-setuptools python-is-python3 git
 
 # Установка NVIDIA CUDA Toolkit Toolkit 12.6 Update 2
 RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb \
@@ -16,11 +15,14 @@ RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86
 # Очистка кеша apt
 RUN apt-get clean
 
-# Позволяет устанавливать пакеты в системный Python.
+# Отключаем внешнее урпавление системными пакетами Python.
 RUN rm -f /usr/lib/python3.12/EXTERNALLY-MANAGED
 
+COPY python_requirements.txt /tmp/python_requirements.txt
+WORKDIR /tmp/
+
 # Пакеты необходимые для нормальной работы Jupyter Notebooks в VS Code
-RUN pip3 install --no-cache-dir ipykernel==6.29.5 ipython==8.29.0 ipywidgets==8.1.5
+RUN pip3 install --no-cache-dir python_requirements.txt
 
 # Установка ML пакетов и других вспомогательных пакетов  
 RUN pip3 install --no-cache-dir matplotlib==3.9.2 nltk==3.9.1 bokeh==3.6.0 umap-learn==0.5.7 tqdm==4.66.6 Unidecode==1.3.8
