@@ -6,10 +6,6 @@ gradio_client==1.4.2
 accelerate==1.1.0
 bitsandbytes==0.44.1
 huggingface_hub==0.26.2
-librosa==0.10.2.post1
-git-lfs==1.6
-ffmpeg==1.4
-jiwer
-pillow
-tensorboard
-transformers[agents]
+jiwer==3.0.5
+pillow==11.0.0
+tensorboard==2.18.0
