@@ -19,7 +19,7 @@ RUN apt-get clean
 RUN rm -f /usr/lib/python3.12/EXTERNALLY-MANAGED
 
 WORKDIR /tmp/
-COPY ipy_requirements.txt ml_requirements.txt pytorch_requirements.txt ./
+COPY ipy_requirements.txt ml_requirements.txt pytorch_requirements.txt transformers_requirements.txt ./
 
 # Установка пакетов необходимых для Jupyter Notebooks и других вспомогательный пакетов 
 RUN pip3 install --no-cache-dir -r ipy_requirements.txt
@@ -31,7 +31,7 @@ RUN pip3 install --no-cache-dir -r ml_requirements.txt
 RUN pip3 install --no-cache-dir -r pytorch_requirements.txt
 
 # Установка Transformers
-RUN pip3 install --no-cache-dir transformers==4.46.1 evaluate==0.4.3 datasets==3.1.0 gradio==5.4.0 gradio_client==1.4.2 accelerate==1.1.0 bitsandbytes==0.44.1 huggingface_hub==0.26.2 librosa==0.10.2.post1 git-lfs==1.6 ffmpeg==1.4 jiwer pillow tensorboard transformers[agents]
+RUN pip3 install --no-cache-dir -r transformers_requirements.txt
 
 # Очистка образа от мусора
 RUN rm -rf /tmp/*
