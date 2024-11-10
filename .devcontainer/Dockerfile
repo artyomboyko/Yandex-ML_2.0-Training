@@ -22,12 +22,12 @@ WORKDIR /tmp/
 COPY base_requirements.txt ml_requirements.txt pytorch_requirements.txt transformers_requirements.txt ./
 
 # Установка пакетов базовых зависимостей и других вспомогательный пакетов. 
-RUN pip3 install --no-cache-dir -r ipy_requirements.txt
+RUN pip3 install --no-cache-dir -r base_requirements.txt
 
-# Установка ML пакетов  
+# Установка ML пакетов.  
 RUN pip3 install --no-cache-dir -r ml_requirements.txt
 
-# Установка Pytorch
+# Установка Pytorch.
 RUN pip3 install --no-cache-dir -r pytorch_requirements.txt
 
 # Установка Transformers
