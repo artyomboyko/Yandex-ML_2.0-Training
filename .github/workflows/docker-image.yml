@@ -27,10 +27,6 @@ jobs:
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-        with:
-          version: "lab:latest"
-          driver: cloud
-          endpoint: "artyomboyko/cloud-builder-free"
 
       - name: Build and push Docker image
         id: push
