@@ -19,7 +19,7 @@ RUN apt-get clean
 RUN rm -f /usr/lib/python3.12/EXTERNALLY-MANAGED
 
 WORKDIR /tmp/
-COPY ipy_requirements.txt ml_requirements.txt pytorch_requirements.txt transformers_requirements.txt ./
+COPY base_requirements.txt ml_requirements.txt pytorch_requirements.txt transformers_requirements.txt ./
 
 # Установка пакетов базовых зависимостей и других вспомогательный пакетов. 
 RUN pip3 install --no-cache-dir -r ipy_requirements.txt
