@@ -40,7 +40,8 @@ jobs:
 
       - name: Build Docker image
         id: build
-        run: docker build -t artyomboyko/yandex-ml_2.0-training:latest
+        run: docker build -t artyomboyko/yandex-ml_2.0-training:latest ./
+        working-directory: ./.devcontainer/
       
       - name: Push Docker image
         id: push
