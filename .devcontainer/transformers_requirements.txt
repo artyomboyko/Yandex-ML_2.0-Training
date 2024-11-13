@@ -9,3 +9,4 @@ huggingface_hub==0.26.2
 jiwer==3.0.5
 pillow==11.0.0
 tensorboard==2.18.0
+sentencepiece==0.2.0
