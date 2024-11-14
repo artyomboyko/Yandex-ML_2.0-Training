@@ -8,7 +8,7 @@ WORKDIR /tmp/
 
 # Обновление системы, установка Python и полезных утилит
 RUN apt-get -y update && apt-get -y upgrade
-RUN apt-get -y install wget zlib1g htop iotop python3-pip python3-wheel python3-setuptools python-is-python3 git
+RUN apt-get -y install wget zlib1g htop iotop python3-pip python3-wheel python3-setuptools python-is-python3 git git-lfs
 
 # Установка NVIDIA CUDA Toolkit Toolkit 12.6 Update 2
 RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb \
