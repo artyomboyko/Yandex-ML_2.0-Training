@@ -25,6 +25,7 @@
 				"ms-toolsai.jupyter-keymap",
 				"ms-toolsai.jupyter-renderers",
 				"ms-toolsai.vscode-jupyter-slideshow",
+				"ms-toolsai.datawrangler",
 				"ms-azuretools.vscode-docker",
 				"github.vscode-github-actions",
 				"github.copilot",
