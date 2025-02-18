@@ -16,4 +16,4 @@
 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
 
 # Команда клонирование репозитория в CMD
-git clone https://artyomboyko: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@github.com/artyomboyko/vscode-dl-devcontainer.git
+git clone https://artyomboyko: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@github.com/artyomboyko/Yandex-ML_2.0-Training.git
