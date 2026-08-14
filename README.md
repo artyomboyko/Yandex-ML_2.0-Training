@@ -27,5 +27,5 @@
 
 ## Результат
 
-6 место в [итоговом рейтинге](https://yandex.ru/yaintern/training/results-ml-2)
-[Сертификат: решено 8 из 8 задач.](https://disk.yandex.ru/i/r-3gfmdyp_S8CA)
+6 место в [итоговом рейтинге](https://yandex.ru/yaintern/training/results-ml-2)    
+[Сертификат: решено 8 из 8 задач.](https://disk.yandex.ru/i/r-3gfmdyp_S8CA)    
