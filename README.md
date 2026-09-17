@@ -5,9 +5,23 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Final%20ranking-6th%20place-FFCC00?logo=yandex&logoColor=000" alt="6th place">
-  <img src="https://img.shields.io/badge/Certificate-8%2F8%20tasks%20solved-2DA44E" alt="8 of 8 tasks solved">
-  <img src="https://img.shields.io/badge/Format-Lectures%20%2B%20Practice-0969DA" alt="Lectures and practice">
+  <a href="https://yandex.ru/yaintern/training/ml-training">
+    <img src="https://img.shields.io/badge/Official%20training-Yandex%20ML%202.0-FFCC00?logo=yandex&logoColor=000" alt="Official Yandex ML 2.0 Training">
+  </a>
+  <a href="https://yandex.ru/yaintern/training/results-ml-2">
+    <img src="https://img.shields.io/badge/Final%20ranking-6th%20place-FFCC00?logo=yandex&logoColor=000" alt="6th place">
+  </a>
+  <a href="https://disk.yandex.ru/i/r-3gfmdyp_S8CA">
+    <img src="https://img.shields.io/badge/Certificate-8%2F8%20tasks%20solved-2DA44E" alt="Certificate: 8 of 8 tasks solved">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://yandex.ru/yaintern/training/ml-training"><strong>Official training page</strong></a>
+  ·
+  <a href="https://yandex.ru/yaintern/training/results-ml-2"><strong>Final ranking</strong></a>
+  ·
+  <a href="https://disk.yandex.ru/i/r-3gfmdyp_S8CA"><strong>Certificate</strong></a>
 </p>
 
 This repository contains my practical work from the [Yandex Machine Learning 2.0 Training](https://yandex.ru/yaintern/training/ml-training), a program covering modern machine learning topics from representation learning and sequence models to LLMs, information retrieval, speech, VLMs, and multimodal systems.
